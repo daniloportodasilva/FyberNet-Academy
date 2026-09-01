@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>FyberNet Academy | Suporte</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            F
+        </div>
+
+        <span>
+            FyberNet Academy
+        </span>
+
+    </div>
+
+
+    <div class="user-area">
+
+        <span id="nomeUsuario">
+            Usuário
+        </span>
+
+        <button onclick="logout()" class="logout-btn">
+            Sair
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="layout">
+
+
+<aside class="sidebar">
+
+    <nav>
+
+        <a href="home.html">
+            🏠 Início
+        </a>
+
+        <a href="suporte.html" class="active">
+            🛠️ Suporte
+        </a>
+
+        <a href="#">
+            📋 Administrativo
+        </a>
+
+        <a href="#">
+            💰 Financeiro
+        </a>
+
+        <a href="#">
+            📈 Comercial
+        </a>
+
+        <a href="#">
+            👥 Recepção
+        </a>
+
+        <a href="#">
+            🔧 Técnico de Campo
+        </a>
+
+    </nav>
+
+</aside>
+
+
+<main class="main-content">
+
+
+<div class="page-header">
+
+    <span class="tag">
+        TRILHA DE TREINAMENTO
+    </span>
+
+    <h1>
+        Suporte Técnico
+    </h1>
+
+    <p>
+        Formação e capacitação para profissionais
+        do setor de suporte.
+    </p>
+
+</div>
+
+
+<div class="instructor">
+
+    <div class="instructor-avatar">
+        AD
+    </div>
+
+    <div>
+
+        <span>
+            INSTRUTOR RESPONSÁVEL
+        </span>
+
+        <h3>
+            Antonio Danilo Porto da Silva
+        </h3>
+
+        <p>
+            Treinamento de suporte técnico e atendimento.
+        </p>
+
+    </div>
+
+</div>
+
+
+<section class="progress-box">
+
+    <div class="progress-info">
+
+        <strong>
+            Seu progresso
+        </strong>
+
+        <span id="progressoTexto">
+            0%
+        </span>
+
+    </div>
+
+    <div class="progress-bar">
+
+        <div
+            id="barraProgresso"
+            class="progress-fill">
+        </div>
+
+    </div>
+
+</section>
+
+
+<h2>
+    Conteúdo do treinamento
+</h2>
+
+
+<div class="course-list">
+
+
+<a href="aulas/modulo1.html"
+   class="course-item">
+
+    <div class="course-number">
+        01
+    </div>
+
+    <div class="course-info">
+
+        <h3>
+            Introdução ao Suporte Técnico
+        </h3>
+
+        <p>
+            Conceitos básicos e apresentação
+            do setor de suporte.
+        </p>
+
+        <span>
+            ▶ Videoaula • 20 minutos
+        </span>
+
+    </div>
+
+    <div class="course-status"
+         id="status1">
+        →
+    </div>
+
+</a>
+
+
+<a href="aulas/modulo2.html"
+   class="course-item">
+
+    <div class="course-number">
+        02
+    </div>
+
+    <div class="course-info">
+
+        <h3>
+            OPA Suite e Fluxo de Atendimento
+        </h3>
+
+        <p>
+            Conhecendo o fluxo de atendimento
+            e abertura de chamados.
+        </p>
+
+        <span>
+            ▶ Videoaula • 35 minutos
+        </span>
+
+    </div>
+
+    <div class="course-status"
+         id="status2">
+        →
+    </div>
+
+</a>
+
+
+<a href="aulas/modulo3.html"
+   class="course-item">
+
+    <div class="course-number">
+        03
+    </div>
+
+    <div class="course-info">
+
+        <h3>
+            Diagnóstico GPON e LOS
+        </h3>
+
+        <p>
+            Diagnóstico inicial de problemas
+            de conexão e fibra óptica.
+        </p>
+
+        <span>
+            ▶ Videoaula • 40 minutos
+        </span>
+
+    </div>
+
+    <div class="course-status"
+         id="status3">
+        →
+    </div>
+
+</a>
+
+
+</div>
+
+</main>
+
+</div>
+
+
+<script src="js/progresso.js"></script>
+
+
+<script>
+
+const usuario =
+    JSON.parse(localStorage.getItem("usuarioLogado"));
+
+
+if (!usuario) {
+
+    window.location.href = "../index.html";
+
+}
+
+
+document.getElementById("nomeUsuario").textContent =
+    usuario.nome;
+
+
+function logout() {
+
+    localStorage.removeItem("usuarioLogado");
+
+    window.location.href = "index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
