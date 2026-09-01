@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>FyberNet Academy | Início</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            F
+        </div>
+
+        <span>
+            FyberNet Academy
+        </span>
+
+    </div>
+
+
+    <div class="user-area">
+
+        <span id="nomeUsuario">
+            Usuário
+        </span>
+
+        <button onclick="logout()" class="logout-btn">
+            Sair
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="layout">
+
+
+    <aside class="sidebar">
+
+        <nav>
+
+            <a href="home.html" class="active">
+                🏠 Início
+            </a>
+
+            <a href="suporte.html">
+                🛠️ Suporte
+            </a>
+
+            <a href="#">
+                📋 Administrativo
+            </a>
+
+            <a href="#">
+                💰 Financeiro
+            </a>
+
+            <a href="#">
+                📈 Comercial
+            </a>
+
+            <a href="#">
+                👥 Recepção
+            </a>
+
+            <a href="#">
+                🔧 Técnico de Campo
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+
+        <section class="welcome">
+
+            <span class="tag">
+                PLATAFORMA DE TREINAMENTO
+            </span>
+
+            <h1>
+                Bem-vindo à FyberNet Academy
+            </h1>
+
+            <p>
+                A FyberNet Academy é uma plataforma de treinamento
+                corporativo desenvolvida para apoiar a capacitação,
+                integração e desenvolvimento profissional dos
+                colaboradores.
+            </p>
+
+            <p>
+                Nossa metodologia combina conteúdos digitais,
+                videoaulas, materiais complementares e encontros
+                presenciais, proporcionando uma experiência de
+                aprendizagem híbrida.
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                Áreas de treinamento
+            </h2>
+
+            <div class="sector-grid">
+
+
+                <a href="suporte.html" class="sector-card">
+
+                    <div class="sector-icon">
+                        🛠️
+                    </div>
+
+                    <h3>
+                        Suporte
+                    </h3>
+
+                    <p>
+                        Atendimento, diagnóstico e suporte técnico.
+                    </p>
+
+                    <span class="available">
+                        Disponível
+                    </span>
+
+                </a>
+
+
+                <div class="sector-card disabled">
+
+                    <div class="sector-icon">
+                        📋
+                    </div>
+
+                    <h3>
+                        Administrativo
+                    </h3>
+
+                    <p>
+                        Conteúdos administrativos.
+                    </p>
+
+                    <span>
+                        Em breve
+                    </span>
+
+                </div>
+
+
+                <div class="sector-card disabled">
+
+                    <div class="sector-icon">
+                        💰
+                    </div>
+
+                    <h3>
+                        Financeiro
+                    </h3>
+
+                    <p>
+                        Processos financeiros.
+                    </p>
+
+                    <span>
+                        Em breve
+                    </span>
+
+                </div>
+
+
+                <div class="sector-card disabled">
+
+                    <div class="sector-icon">
+                        📈
+                    </div>
+
+                    <h3>
+                        Comercial
+                    </h3>
+
+                    <p>
+                        Técnicas e processos comerciais.
+                    </p>
+
+                    <span>
+                        Em breve
+                    </span>
+
+                </div>
+
+
+                <div class="sector-card disabled">
+
+                    <div class="sector-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        Recepção
+                    </h3>
+
+                    <p>
+                        Atendimento e recepção.
+                    </p>
+
+                    <span>
+                        Em breve
+                    </span>
+
+                </div>
+
+
+                <div class="sector-card disabled">
+
+                    <div class="sector-icon">
+                        🔧
+                    </div>
+
+                    <h3>
+                        Técnico de Campo
+                    </h3>
+
+                    <p>
+                        Instalação e manutenção.
+                    </p>
+
+                    <span>
+                        Em breve
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+const usuario =
+    JSON.parse(localStorage.getItem("usuarioLogado"));
+
+
+if (!usuario) {
+
+    window.location.href = "index.html";
+
+}
+
+
+document.getElementById("nomeUsuario").textContent =
+    usuario.nome;
+
+
+function logout() {
+
+    localStorage.removeItem("usuarioLogado");
+
+    window.location.href = "index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
