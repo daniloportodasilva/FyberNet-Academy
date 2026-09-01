@@ -1,8 +1,8 @@
 const usuarios = [
     {
-        usuario: "antonio",
+        usuario: "teste",
         senha: "123456",
-        nome: "Antonio Danilo",
+        nome: "Usuario de teste",
         setor: "suporte"
     },
 
