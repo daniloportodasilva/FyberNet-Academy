@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Aula 01 | FyberNet Academy</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            F
+        </div>
+
+        <span>
+            FyberNet Academy
+        </span>
+
+    </div>
+
+    <div class="user-area">
+
+        <span id="nomeUsuario">
+            Usuário
+        </span>
+
+        <button onclick="logout()" class="logout-btn">
+            Sair
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="lesson-container">
+
+
+<a href="../suporte.html" class="back-link">
+    ← Voltar para o treinamento
+</a>
+
+
+<div class="lesson-header">
+
+    <span class="tag">
+        MÓDULO 01
+    </span>
+
+    <h1>
+        Introdução ao Suporte Técnico
+    </h1>
+
+    <p>
+        Conhecendo o setor, suas responsabilidades
+        e principais atividades.
+    </p>
+
+</div>
+
+
+<div class="video-container">
+
+    <!-- 
+        SUBSTITUA O LINK ABAIXO PELO LINK
+        DA SUA VIDEOAULA
+    -->
+
+    <iframe
+        src="https://www.youtube.com/embed/SEU_VIDEO_AQUI"
+        title="Videoaula"
+        allowfullscreen>
+    </iframe>
+
+</div>
+
+
+<section class="lesson-content">
+
+    <h2>
+        Sobre esta aula
+    </h2>
+
+    <p>
+        Nesta aula serão apresentados os principais
+        conceitos relacionados ao suporte técnico,
+        responsabilidades do profissional e fluxo
+        inicial de atendimento.
+    </p>
+
+
+    <h3>
+        Objetivos
+    </h3>
+
+    <ul>
+
+        <li>
+            Conhecer o setor de suporte.
+        </li>
+
+        <li>
+            Entender as responsabilidades do atendente.
+        </li>
+
+        <li>
+            Conhecer o fluxo básico de atendimento.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="attendance-box">
+
+    <div>
+
+        <span>
+            CONTROLE DE PRESENÇA
+        </span>
+
+        <h2>
+            Você assistiu à aula?
+        </h2>
+
+        <p>
+            Confirme sua presença após assistir
+            ao conteúdo.
+        </p>
+
+    </div>
+
+
+    <button
+        id="presencaBtn"
+        class="btn-primary">
+
+        Confirmar presença
+
+    </button>
+
+
+    <p
+        id="presencaMensagem"
+        class="attendance-message">
+    </p>
+
+</section>
+
+
+</main>
+
+
+<script>
+
+const usuario =
+    JSON.parse(localStorage.getItem("usuarioLogado"));
+
+
+if (!usuario) {
+
+    window.location.href = "../index.html";
+
+}
+
+
+document.getElementById("nomeUsuario").textContent =
+    usuario.nome;
+
+
+function logout() {
+
+    localStorage.removeItem("usuarioLogado");
+
+    window.location.href = "../index.html";
+
+}
+
+
+const botao =
+    document.getElementById("presencaBtn");
+
+const mensagem =
+    document.getElementById("presencaMensagem");
+
+
+if (localStorage.getItem("aula1_concluida")) {
+
+    botao.textContent =
+        "✓ Presença registrada";
+
+    botao.disabled = true;
+
+    mensagem.textContent =
+        "Sua presença nesta aula já foi registrada.";
+
+}
+
+
+botao.addEventListener("click", function() {
+
+    const data =
+        new Date().toLocaleString("pt-BR");
+
+
+    localStorage.setItem(
+        "aula1_concluida",
+        data
+    );
+
+
+    botao.textContent =
+        "✓ Presença registrada";
+
+    botao.disabled = true;
+
+
+    mensagem.textContent =
+        "Presença registrada em " + data;
+
+});
+
+</script>
+
+
+</body>
+
+</html>
